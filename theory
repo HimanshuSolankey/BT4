@@ -1,0 +1,72 @@
+Experiment No 4
+Title -Write a program in solidity to create Student data. Use the following constructs:
+1) Structures2) Arrays3) FallbackDeploy this as a smart contract on Ethereum and Observe the transaction fee and Gasvalues.
+
+Objective -
+To understand and explore the working of Blockchain technology and its application
+
+Theory• 
+
+Solidity 
+
+Solidity is an object-oriented programming language for implementing smartcontracts on various blockchain platforms, most notably, Ethereum. 
+It was developed by Christian Reitwiessner, Alex Beregszaszi, and several former Ethereum corecontributors. 
+Programs in Solidity run on Ethereum Virtual Machine.Solidity was proposed in August 2014 by Gavin Wood; the language was laterdeveloped by the Ethereum project's Solidity team, 
+led by Christian Reitwiessner.Solidity is the primary language on Ethereum as well as on other private blockchains,such as the enterprise-oriented Hyperledger Fabric blockchain. 
+SWIFT deployed a proof of concept using Solidity running on Hyperledger Fabric.
+
+•Solidity - Struct
+Structs in Solidity allow you to create more complicated data types that have multiple properties. You can define your own type by creating astruct.
+They are useful for grouping together related data.Structs can be declared outside of a contract and imported in another contract.
+Generally, it is used to represent a record. To define a structure struct  keyword isused, which creates a new data type
+
+.Syntax:
+
+struct <structure_name> {
+<data type> variable_1;
+<data type> variable_2; }
+
+Solidity - Arrays
+In Solidity, an array can be of compile-time fixed size or of dynamic size. For storagearray, it can have different types of elements as well. In case of memory array,
+element type can not be mapping and in case it is to be used as function parameterthen element type should be an ABI type.
+
+All arrays consist of contiguous memory locations. The lowest address corresponds tothe first element and the highest address to the last element.
+
+Declaring Arrays
+
+To declare an array of fixed size in Solidity, the programmer specifies the type of theelements and the number of elements required by an array as follows!
+type arrayName [ arraySize ];
+
+This is called a single-dimension array. ThearraySize must be an integer constantgreater than zero andtype can be any valid Solidity data type. 
+For example, todeclare a 10-element array called balance of type uint, use this statement!
+
+uint balance[10];
+
+To declare an array of dynamic size in Solidity, the programmer specifies the type ofthe elements as follows! 
+
+type[] arrayName;
+
+Initializing ArraysYou can initialize Solidity array elements either one by one or using a singlestatement as follows! 
+
+uint balance[3] = [1, 2, 3];
+The number of values between braces [ ] can not be larger than the number ofelements that we declare for the array between square brackets [ ]. 
+Following is anexample to assign a single element of the array! If you omit the size of the array, an array just big enough to hold the initialization iscreated. 
+Therefore, if you write!
+
+uint balance[] = [1, 2, 3];You will create exactly the same array as you did in the previous example. balance[2] = 5;
+
+Solidity – Fall Back Function
+
+The solidity fallback function is executed if none of the other functions match the function identifier or no data was provided with the function call. 
+Only oneunnamed function can be assigned to a contract and it is executed whenever thecontract receives plain Ether without any data. 
+To receive Ether and add it to the total balance of the contract, the fallback function must be marked payable. If no suchfunction exists, the contract cannot receive 
+Ether through regular transactions andwill throw an exception.
+
+Properties of a fallback function:
+•Has no name or arguments.
+•If it is not markedpayable, the contract will throw an exception if it receives plainether without data.
+•Can not return anything.•Can be defined once per contract.
+•It is also executed if the caller meant to call a function that is not available
+•It is mandatory to mark it external.
+•It is limited to 2300 gas when called by another function. It is so for as to make thisfunction call as cheap as possible.
+
